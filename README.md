@@ -12,11 +12,11 @@
       
  
  ## Description 
- It is a project written in Javascript for NODE and mySQL using Bootstrap and Handlebars
+ It is a project written in Javascript for NODE and mySQL using Express and Handlebars
        
  
  ## Installation 
- Its a webpage head to [this link]() and start posting!
+ Its a webpage head to [this link](https://magic-blog.herokuapp.com/) and start posting!
       
  
  ## Usage 
