@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/homePage.css" type="text/css" />
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Maic Blog!</h1>
+  <p class="lead">Welcome to magic blog a place for us all to share our stories!</p>
+</div>
+<div class="posts">
+  {{#each posts}}
+  <article class="card">
+    <div class="card-header flex-row justify-space-between">
+      <h2>
+        <a href="/api/posts/{{id}}">{{title}}</a>
+      </h2>
+      <div>
+        Posted by {{User.user_name}} on {{format_date createdAt}}
+      </div>
+    </div>
+    <div class="card-body">
+      {{post_content}}
+    </div>
+  </article>
+  {{/each}}
+</div>

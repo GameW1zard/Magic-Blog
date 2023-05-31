@@ -1,0 +1,52 @@
+<div class="post">
+  <article class="card">
+    <div class="card-header flex-row justify-space-between">
+      <h2 id="title" data-postid={{post.id}}>{{post.title}}</h2>
+      <div>
+        Posted by {{post.User.user_name}} on {{format_date post.createdAt}}
+      </div>
+    </div>
+    <div class="card-body">
+      {{post.post_content}}
+    </div>
+  </article>
+
+  {{#if post.Comments}}
+    <section class="card">
+      <div class="card-header">
+        <h3>Comments</h3>
+      </div>
+
+      <div class="card-body">
+        {{#each post.Comments}}
+          <div>
+            <p>
+              {{comment_content}}
+            </p>
+            <p>
+              &mdash; {{User.user_name}}, {{format_date createdAt}}
+            </p>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+  {{/if}}
+
+  <form id="comment-form" class="card">
+    <div class="card-header">
+      <h3>Add New Comment</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="post-id" value="{{post.id}}" />
+
+      <label class="form-label" for="comment-body">Comment</label>
+
+      <textarea id="comment-text" name="comment" class="form-input"></textarea>
+
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/p-one.js"></script>
